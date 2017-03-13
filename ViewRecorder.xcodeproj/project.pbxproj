@@ -12,6 +12,10 @@
 		B9D5D6021E76DD7A006C58B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D6001E76DD7A006C58B4 /* Main.storyboard */; };
 		B9D5D6041E76DD7A006C58B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D6031E76DD7A006C58B4 /* Assets.xcassets */; };
 		B9D5D6071E76DD7A006C58B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D6051E76DD7A006C58B4 /* LaunchScreen.storyboard */; };
+		B9D5D6131E76DE55006C58B4 /* EPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D60F1E76DE55006C58B4 /* EPExtensions.swift */; };
+		B9D5D6141E76DE55006C58B4 /* EPSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D6101E76DE55006C58B4 /* EPSignatureView.swift */; };
+		B9D5D6151E76DE55006C58B4 /* EPSignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D6111E76DE55006C58B4 /* EPSignatureViewController.swift */; };
+		B9D5D6161E76DE55006C58B4 /* EPSignatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D6121E76DE55006C58B4 /* EPSignatureViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		B9D5D6031E76DD7A006C58B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9D5D6061E76DD7A006C58B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9D5D6081E76DD7A006C58B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9D5D60F1E76DE55006C58B4 /* EPExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPExtensions.swift; sourceTree = "<group>"; };
+		B9D5D6101E76DE55006C58B4 /* EPSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPSignatureView.swift; sourceTree = "<group>"; };
+		B9D5D6111E76DE55006C58B4 /* EPSignatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPSignatureViewController.swift; sourceTree = "<group>"; };
+		B9D5D6121E76DE55006C58B4 /* EPSignatureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSignatureViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 		B9D5D5FB1E76DD7A006C58B4 /* ViewRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				B9D5D60E1E76DE55006C58B4 /* Library */,
 				B9D5D5FC1E76DD7A006C58B4 /* AppDelegate.swift */,
 				B9D5D5FE1E76DD7A006C58B4 /* ViewController.swift */,
 				B9D5D6001E76DD7A006C58B4 /* Main.storyboard */,
@@ -62,6 +71,17 @@
 				B9D5D6081E76DD7A006C58B4 /* Info.plist */,
 			);
 			path = ViewRecorder;
+			sourceTree = "<group>";
+		};
+		B9D5D60E1E76DE55006C58B4 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				B9D5D60F1E76DE55006C58B4 /* EPExtensions.swift */,
+				B9D5D6101E76DE55006C58B4 /* EPSignatureView.swift */,
+				B9D5D6111E76DE55006C58B4 /* EPSignatureViewController.swift */,
+				B9D5D6121E76DE55006C58B4 /* EPSignatureViewController.xib */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +144,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D5D6161E76DE55006C58B4 /* EPSignatureViewController.xib in Resources */,
 				B9D5D6071E76DD7A006C58B4 /* LaunchScreen.storyboard in Resources */,
 				B9D5D6041E76DD7A006C58B4 /* Assets.xcassets in Resources */,
 				B9D5D6021E76DD7A006C58B4 /* Main.storyboard in Resources */,
@@ -138,6 +159,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D5D5FF1E76DD7A006C58B4 /* ViewController.swift in Sources */,
+				B9D5D6131E76DE55006C58B4 /* EPExtensions.swift in Sources */,
+				B9D5D6151E76DE55006C58B4 /* EPSignatureViewController.swift in Sources */,
+				B9D5D6141E76DE55006C58B4 /* EPSignatureView.swift in Sources */,
 				B9D5D5FD1E76DD7A006C58B4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +324,7 @@
 				B9D5D60D1E76DD7A006C58B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
