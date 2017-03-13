@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,12 +37,25 @@
                                     <action selector="record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pkC-gl-A5T"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkI-uG-NdL">
+                                <rect key="frame" x="21" y="41" width="36" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="b2A-PL-Nnn"/>
+                                    <constraint firstAttribute="height" constant="30" id="eCx-53-Ueq"/>
+                                </constraints>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zzd-5s-fyI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="gkI-uG-NdL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="3bZ-zu-RhU"/>
                             <constraint firstItem="Qdm-If-3fm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5ac-xQ-6Nk"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qdm-If-3fm" secondAttribute="bottom" id="6wt-6c-Eto"/>
                             <constraint firstItem="k2J-6F-dqS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="ApP-bb-nuC"/>
+                            <constraint firstItem="gkI-uG-NdL" firstAttribute="top" secondItem="k2J-6F-dqS" secondAttribute="bottom" constant="-35" id="H5R-TS-C9N"/>
                             <constraint firstItem="k2J-6F-dqS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZlA-AN-bYN"/>
                             <constraint firstAttribute="trailing" secondItem="Qdm-If-3fm" secondAttribute="trailing" id="cZT-ag-9Rj"/>
                             <constraint firstItem="Qdm-If-3fm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="72" id="lo1-Tr-uJf"/>

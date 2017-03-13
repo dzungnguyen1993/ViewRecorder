@@ -16,6 +16,7 @@
 		B9D5D6141E76DE55006C58B4 /* EPSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D6101E76DE55006C58B4 /* EPSignatureView.swift */; };
 		B9D5D6151E76DE55006C58B4 /* EPSignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D6111E76DE55006C58B4 /* EPSignatureViewController.swift */; };
 		B9D5D6161E76DE55006C58B4 /* EPSignatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D6121E76DE55006C58B4 /* EPSignatureViewController.xib */; };
+		B9D5D61A1E76E6C3006C58B4 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D6191E76E6C3006C58B4 /* Recorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B9D5D6101E76DE55006C58B4 /* EPSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPSignatureView.swift; sourceTree = "<group>"; };
 		B9D5D6111E76DE55006C58B4 /* EPSignatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPSignatureViewController.swift; sourceTree = "<group>"; };
 		B9D5D6121E76DE55006C58B4 /* EPSignatureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSignatureViewController.xib; sourceTree = "<group>"; };
+		B9D5D6191E76E6C3006C58B4 /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				B9D5D6031E76DD7A006C58B4 /* Assets.xcassets */,
 				B9D5D6051E76DD7A006C58B4 /* LaunchScreen.storyboard */,
 				B9D5D6081E76DD7A006C58B4 /* Info.plist */,
+				B9D5D6191E76E6C3006C58B4 /* Recorder.swift */,
 			);
 			path = ViewRecorder;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				B9D5D5FF1E76DD7A006C58B4 /* ViewController.swift in Sources */,
 				B9D5D6131E76DE55006C58B4 /* EPExtensions.swift in Sources */,
 				B9D5D6151E76DE55006C58B4 /* EPSignatureViewController.swift in Sources */,
+				B9D5D61A1E76E6C3006C58B4 /* Recorder.swift in Sources */,
 				B9D5D6141E76DE55006C58B4 /* EPSignatureView.swift in Sources */,
 				B9D5D5FD1E76DD7A006C58B4 /* AppDelegate.swift in Sources */,
 			);

@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var drawView: EPSignatureView!
     @IBOutlet weak var btnRecord: UIButton!
+    var images: [UIImage] = [UIImage]()
+    var isRecording: Bool!
+    var recordTimer: Timer!
+    var btnTimer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,18 +29,61 @@ class ViewController: UIViewController {
         
         btnRecord.layer.cornerRadius = btnRecord.bounds.width/2
         btnRecord.backgroundColor = UIColor(hex: 0x158141)
+        
+        isRecording = false
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     @IBAction func record(_ sender: UIButton) {
-        btnRecord.backgroundColor = UIColor(hex: 0xEB2427)
-        
-        saveSignature()
+        if (!isRecording) {
+            btnRecord.backgroundColor = UIColor(hex: 0xEB2427)
+            isRecording = true
+            
+            // start timer
+            
+            recordTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateImage), userInfo: nil, repeats: true)
+            btnTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateButton), userInfo: nil, repeats: true)
+            images.removeAll()
+        } else {
+            isRecording = false
+            btnRecord.backgroundColor = UIColor(hex: 0x158141)
+            recordTimer.invalidate()
+            btnTimer.invalidate()
+            
+            // export video
+            let height = images[0].cgImage?.height
+            var width = images[0].cgImage?.width
+            
+            if (width! % 16 != 0) {
+                let tmp = width! / 16
+                width = tmp * 16
+            }
+            
+            let settings = Recorder.videoSettings(codec: AVVideoCodecH264, width: width!, height: height!)
+            let movieMaker = Recorder(videoSettings: settings)
+            movieMaker.createMovieFrom(images: images){ (fileURL:URL) in
+                self.playVideo(url: fileURL)
+            }
+        }
     }
+    
+    func playVideo(url: URL) {
+        let player = AVPlayer(url: url)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: true) {
+            playerViewController.player!.play()
+        }
+    }
+    
+    @IBAction func clear(_ sender: Any) {
+        drawView.clear()
+    }
+    
 }
 
 extension ViewController: EPSignatureDelegate {
@@ -47,10 +96,9 @@ extension ViewController: EPSignatureDelegate {
         
     }
     
-    func saveSignature() {
-        if let signature = drawView.getSignatureAsImage() {
-            drawView.saveSignature("test.png")
-            drawView.saveSignatureToFile(image: signature)
+    func saveImage() {
+        if let image = drawView.getSignatureAsImage() {
+            self.images.append(image)
         } else {
 //            showAlert("You did not sign", andTitle: "Please draw your signature")
         }
@@ -65,5 +113,21 @@ extension UIColor {
             B: CGFloat((hex >> 00) & 0xff) / 255
         )
         self.init(red: components.R, green: components.G, blue: components.B, alpha: 1)
+    }
+}
+
+extension ViewController {
+    @objc func updateImage() {
+        saveImage()
+    }
+    
+    @objc func updateButton() {
+        if self.btnRecord.tag == 0 {
+            btnRecord.backgroundColor = UIColor(hex: 0xEB2427)
+            btnRecord.tag = 1
+        } else {
+            btnRecord.backgroundColor = UIColor(hex: 0x158141)
+            btnRecord.tag = 0
+        }
     }
 }
